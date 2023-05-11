@@ -82,7 +82,7 @@ class WxpayService
             'notify_url' => $this->notifyUrl,       //通知URL必须为直接可访问的URL，不允许携带查询串。
             'out_trade_no' => $this->outTradeNo,      //商户系统内部订单号，只能是数字、大小写字母_-*且在同一个商户号下唯一，详见【商户订单号】。特殊规则：最小字符长度为6
             'amount'=>array(
-                'total'=> floatval($this->totalFee) * 100, //订单总金额，单位为分
+                'total'=> int($this->totalFee * 100), //订单总金额，单位为分
                 'currency'=> 'CNY', //CNY：人民币，境内商户号仅支持人民币
             ),
             'scene_info'=>array(        //支付场景描述
